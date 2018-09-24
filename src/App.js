@@ -5,7 +5,6 @@ import './assets/style.scss'
 import Header from './components/Header'
 import Menu from './components/Menu'
 import Home from './components/Home'
-import About from './components/About'
 
 const App = () => (
   <BrowserRouter>
@@ -14,7 +13,6 @@ const App = () => (
       <Menu />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/about/" component={About} />
       </Switch>
     </div>
   </BrowserRouter>
