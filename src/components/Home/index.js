@@ -1,22 +1,32 @@
-import React, { Component } from 'react';
-import './style.scss';
+import React, { Component } from 'react'
+import './style.scss'
+
+import Children from '../Children'
 
 class Home extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      sss: 'ss',
-    };
+      text: ''
+    }
+  }
+
+  inputChange = e => {
+    const { value } = e.target
+    console.log(value)
+    this.setState({ text: value })
   }
 
   render() {
-    const { sss } = this.state;
+    const { text } = this.state
+
     return (
       <div className="home">
-        { sss }
+        <input type="text" value={text} onChange={e => this.inputChange(e)} />
+        <Children text={text} />
       </div>
-    );
+    )
   }
 }
 
-export default Home;
+export default Home

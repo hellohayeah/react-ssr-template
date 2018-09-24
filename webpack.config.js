@@ -33,5 +33,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html'
     })
-  ]
+  ],
+  devServer: {
+    // react router reload
+    historyApiFallback: true
+  }
 }

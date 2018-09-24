@@ -3,11 +3,7 @@ import './style.scss'
 
 class About extends Component {
   render() {
-    return (
-    <div className="about">
-      About
-    </div>
-    )
+    return <div className="about">About</div>
   }
 }
 

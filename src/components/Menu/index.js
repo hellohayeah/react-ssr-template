@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './style.scss'
 
 class Menu extends Component {
@@ -8,10 +8,10 @@ class Menu extends Component {
       <nav className="menu">
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>
