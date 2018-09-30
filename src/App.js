@@ -5,6 +5,8 @@ import './assets/style.scss'
 import Header from './components/Header'
 import Menu from './components/Menu'
 import Home from './components/Home'
+import Password from './components/Password'
+import RegionSelect from './components/RegionSelect'
 
 const App = () => (
   <BrowserRouter>
@@ -13,6 +15,8 @@ const App = () => (
       <Menu />
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/password" exact component={Password} />
+        <Route path="/region-select" exact component={RegionSelect} />
       </Switch>
     </div>
   </BrowserRouter>
