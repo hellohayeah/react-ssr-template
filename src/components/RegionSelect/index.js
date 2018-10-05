@@ -6,18 +6,50 @@ class RegionSelect extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      area: []
+      cities: [],
+      cityIdx: 0,
+      areaIdx: 0
     }
   }
 
   componentWillMount() {
-    this.setState({ area: data })
+    this.setState({ cities: data })
+  }
+
+  onChangeCity = e => {
+    const { value } = e.target
+    this.setState({ cityIdx: value, areaIdx: 0 })
+  }
+
+  onChangeArea = e => {
+    const { value } = e.target
+    this.setState({ areaIdx: value })
   }
 
   render() {
-    const { area } = this.state
-    console.log(area)
-    return <div className="region-select">RegionSelect</div>
+    const { cities, cityIdx, areaIdx } = this.state
+    const city = cities[cityIdx]
+    const areas = city.areas
+
+    return (
+      <div className="region-select">
+        <select value={cityIdx} onChange={this.onChangeCity}>
+          {cities.map(({ name }, idx) => (
+            <option key={name} value={idx}>
+              {name}
+            </option>
+          ))}
+        </select>
+        <select value={areaIdx} onChange={this.onChangeArea}>
+          {areas.map(({ name }, idx) => (
+            <option key={name} value={idx}>
+              {name}
+            </option>
+          ))}
+        </select>
+        <span>{areas[cityIdx].zip}</span>
+      </div>
+    )
   }
 }
 

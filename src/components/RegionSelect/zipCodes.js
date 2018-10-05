@@ -8,8 +8,8 @@ export default [
       { name: '中山區', zip: '203' },
       { name: '安樂區', zip: '204' },
       { name: '暖暖區', zip: '205' },
-      { name: '七堵區', zip: '206' },
-    ],
+      { name: '七堵區', zip: '206' }
+    ]
   },
   {
     name: '臺北市',
@@ -25,8 +25,8 @@ export default [
       { name: '北投區', zip: '112' },
       { name: '內湖區', zip: '114' },
       { name: '南港區', zip: '115' },
-      { name: '文山區', zip: '116' },
-    ],
+      { name: '文山區', zip: '116' }
+    ]
   },
   {
     name: '新北市',
@@ -59,8 +59,8 @@ export default [
       { name: '八里區', zip: '249' },
       { name: '淡水區', zip: '251' },
       { name: '三芝區', zip: '252' },
-      { name: '石門區', zip: '253' },
-    ],
+      { name: '石門區', zip: '253' }
+    ]
   },
   {
     name: '桃園市',
@@ -77,14 +77,12 @@ export default [
       { name: '大溪區', zip: '335' },
       { name: '復興區', zip: '336' },
       { name: '大園區', zip: '337' },
-      { name: '蘆竹區', zip: '338' },
-    ],
+      { name: '蘆竹區', zip: '338' }
+    ]
   },
   {
     name: '新竹市',
-    areas: [
-      { name: '新竹市', zip: '300' },
-    ],
+    areas: [{ name: '新竹市', zip: '300' }]
   },
   {
     name: '新竹縣',
@@ -101,8 +99,8 @@ export default [
       { name: '橫山鄉', zip: '312' },
       { name: '尖石鄉', zip: '313' },
       { name: '北埔鄉', zip: '314' },
-      { name: '峨眉鄉', zip: '315' },
-    ],
+      { name: '峨眉鄉', zip: '315' }
+    ]
   },
   {
     name: '苗栗縣',
@@ -124,8 +122,8 @@ export default [
       { name: '銅鑼鄉', zip: '366' },
       { name: '三義鄉', zip: '367' },
       { name: '西湖鄉', zip: '368' },
-      { name: '卓蘭鎮', zip: '369' },
-    ],
+      { name: '卓蘭鎮', zip: '369' }
+    ]
   },
   {
     name: '臺中市',
@@ -158,8 +156,8 @@ export default [
       { name: '清水區', zip: '436' },
       { name: '大甲區', zip: '437' },
       { name: '外埔區', zip: '438' },
-      { name: '大安區', zip: '439' },
-    ],
+      { name: '大安區', zip: '439' }
+    ]
   },
   {
     name: '彰化縣',
@@ -189,8 +187,8 @@ export default [
       { name: '二林鎮', zip: '526' },
       { name: '大城鄉', zip: '527' },
       { name: '芳苑鄉', zip: '528' },
-      { name: '二水鄉', zip: '530' },
-    ],
+      { name: '二水鄉', zip: '530' }
+    ]
   },
   {
     name: '南投縣',
@@ -207,8 +205,8 @@ export default [
       { name: '魚池鄉', zip: '555' },
       { name: '信義鄉', zip: '556' },
       { name: '竹山鎮', zip: '557' },
-      { name: '鹿谷鄉', zip: '558' },
-    ],
+      { name: '鹿谷鄉', zip: '558' }
+    ]
   },
   {
     name: '雲林縣',
@@ -232,14 +230,12 @@ export default [
       { name: '水林鄉', zip: '652' },
       { name: '口湖鄉', zip: '653' },
       { name: '四湖鄉', zip: '654' },
-      { name: '元長鄉', zip: '655' },
-    ],
+      { name: '元長鄉', zip: '655' }
+    ]
   },
   {
     name: '嘉義市',
-    areas: [
-      { name: '嘉義市', zip: '600' },
-    ],
+    areas: [{ name: '嘉義市', zip: '600' }]
   },
   {
     name: '嘉義縣',
@@ -261,8 +257,8 @@ export default [
       { name: '大林鎮', zip: '622' },
       { name: '溪口鄉', zip: '623' },
       { name: '義竹鄉', zip: '624' },
-      { name: '布袋鄉', zip: '625' },
-    ],
+      { name: '布袋鄉', zip: '625' }
+    ]
   },
   {
     name: '臺南市',
@@ -303,8 +299,8 @@ export default [
       { name: '大內區', zip: '742' },
       { name: '山上區', zip: '743' },
       { name: '新市區', zip: '744' },
-      { name: '安定區', zip: '745' },
-    ],
+      { name: '安定區', zip: '745' }
+    ]
   },
   {
     name: '高雄市',
@@ -348,8 +344,8 @@ export default [
       { name: '茂林區', zip: '851' },
       { name: '茄萣區', zip: '852' },
       { name: '東沙', zip: '817' },
-      { name: '南沙', zip: '819' },
-    ],
+      { name: '南沙', zip: '819' }
+    ]
   },
   {
     name: '屏東縣',
@@ -386,8 +382,8 @@ export default [
       { name: '車城鄉', zip: '944' },
       { name: '牡丹鄉', zip: '945' },
       { name: '恆春鎮', zip: '946' },
-      { name: '滿洲鄉', zip: '947' },
-    ],
+      { name: '滿洲鄉', zip: '947' }
+    ]
   },
   {
     name: '臺東縣',
@@ -407,8 +403,8 @@ export default [
       { name: '太麻里', zip: '963' },
       { name: '金峰鄉', zip: '964' },
       { name: '大武鄉', zip: '965' },
-      { name: '達仁鄉', zip: '966' },
-    ],
+      { name: '達仁鄉', zip: '966' }
+    ]
   },
   {
     name: '花蓮縣',
@@ -425,8 +421,8 @@ export default [
       { name: '萬榮鄉', zip: '979' },
       { name: '玉里鎮', zip: '981' },
       { name: '卓溪鄉', zip: '982' },
-      { name: '富里鄉', zip: '983' },
-    ],
+      { name: '富里鄉', zip: '983' }
+    ]
   },
   {
     name: '宜蘭縣',
@@ -443,8 +439,8 @@ export default [
       { name: '冬山鄉', zip: '269' },
       { name: '蘇澳鎮', zip: '270' },
       { name: '南澳鄉', zip: '272' },
-      { name: '釣魚臺', zip: '290' },
-    ],
+      { name: '釣魚臺', zip: '290' }
+    ]
   },
   {
     name: '澎湖縣',
@@ -454,8 +450,8 @@ export default [
       { name: '望安鄉', zip: '882' },
       { name: '七美鄉', zip: '883' },
       { name: '白沙鄉', zip: '884' },
-      { name: '湖西鄉', zip: '885' },
-    ],
+      { name: '湖西鄉', zip: '885' }
+    ]
   },
   {
     name: '金門縣',
@@ -465,8 +461,8 @@ export default [
       { name: '金寧鄉', zip: '892' },
       { name: '金城鎮', zip: '893' },
       { name: '烈嶼鄉', zip: '894' },
-      { name: '烏坵', zip: '896' },
-    ],
+      { name: '烏坵', zip: '896' }
+    ]
   },
   {
     name: '連江縣',
@@ -474,7 +470,7 @@ export default [
       { name: '南竿', zip: '209' },
       { name: '北竿', zip: '210' },
       { name: '莒光', zip: '211' },
-      { name: '東引', zip: '212' },
-    ],
-  },
-];
+      { name: '東引', zip: '212' }
+    ]
+  }
+]
