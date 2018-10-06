@@ -14,6 +14,12 @@ const Menu = () => (
       <li>
         <Link to="region-select">地區選單</Link>
       </li>
+      <li>
+        <Link to="image-preview">預覽圖片</Link>
+      </li>
+      <li>
+        <Link to="filter-list">篩選列表</Link>
+      </li>
     </ul>
   </nav>
 )
