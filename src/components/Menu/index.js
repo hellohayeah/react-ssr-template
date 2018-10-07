@@ -20,6 +20,9 @@ const Menu = () => (
       <li>
         <Link to="filter-list">篩選列表</Link>
       </li>
+      <li>
+        <Link to="filter-list-with-color">篩選顏色</Link>
+      </li>
     </ul>
   </nav>
 )

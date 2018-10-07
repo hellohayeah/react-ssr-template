@@ -9,6 +9,7 @@ import Password from './components/Password'
 import RegionSelect from './components/RegionSelect'
 import ImagePreview from './components/ImagePreview'
 import FilterList from './components/FilterList'
+import FilterListWithColor from './components/FilterListWithColor'
 
 const App = () => (
   <BrowserRouter>
@@ -21,6 +22,11 @@ const App = () => (
         <Route path="/region-select" exact component={RegionSelect} />
         <Route path="/image-preview" exact component={ImagePreview} />
         <Route path="/filter-list" exact component={FilterList} />
+        <Route
+          path="filter-list-with-color"
+          exact
+          component={FilterListWithColor}
+        />
       </Switch>
     </div>
   </BrowserRouter>
