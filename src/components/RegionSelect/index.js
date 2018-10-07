@@ -47,7 +47,7 @@ class RegionSelect extends Component {
             </option>
           ))}
         </select>
-        <span>{areas[cityIdx].zip}</span>
+        <span>{areas[areaIdx].zip}</span>
       </div>
     )
   }
