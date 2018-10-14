@@ -23,7 +23,7 @@ const App = () => (
         <Route path="/image-preview" exact component={ImagePreview} />
         <Route path="/filter-list" exact component={FilterList} />
         <Route
-          path="filter-list-with-color"
+          path="/filter-list-with-color"
           exact
           component={FilterListWithColor}
         />
