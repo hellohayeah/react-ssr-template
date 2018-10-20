@@ -10,6 +10,7 @@ import RegionSelect from './components/RegionSelect'
 import ImagePreview from './components/ImagePreview'
 import FilterList from './components/FilterList'
 import FilterListWithColor from './components/FilterListWithColor'
+import NewLifecycle from './components/NewLifecycle'
 
 const App = () => (
   <BrowserRouter>
@@ -27,6 +28,7 @@ const App = () => (
           exact
           component={FilterListWithColor}
         />
+        <Route path="/new-lifecycle" exact component={NewLifecycle} />
       </Switch>
     </div>
   </BrowserRouter>
