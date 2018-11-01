@@ -1,44 +1,38 @@
 import React, { Component } from 'react'
-import './style.scss'
 
-import Children from './Children'
+import TemperatureInput from './TemperatureInput'
+import BoilingVerdict from './BoilingVerdict'
+import Dialog from './Dialog'
 
-class NewLifecycle extends Component {
+export class index extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      posts: [],
-      comments: [],
-      date: new Date()
+    this.textInput = null
+    this.setTextInputRef = element => {
+      this.textInput = element
+    }
+
+    this.focusTextInput = () => {
+      if (this.textInput) this.textInput.focus()
     }
   }
 
-  tick = () => {
-    this.setState({ date: new Date() })
-  }
-
   componentDidMount() {
-    console.log('componentDidMount')
-    this.timeId = setInterval(() => {
-      this.tick()
-    }, 1000)
-  }
-
-  componentWillUnmount() {
-    console.log('componentWillUnmount')
-    clearInterval(this.tick)
+    this.focusTextInput()
   }
 
   render() {
-    console.log('render')
-    const { date } = this.state
     return (
-      <div className="new-lifecycle">
-        {date.toLocaleTimeString()}
-        <Children />
+      <div>
+        <input type="text" ref={this.setTextInputRef} />
+        <input
+          type="button"
+          value="Focus the text input"
+          onClick={this.focusTextInput}
+        />
       </div>
     )
   }
 }
 
-export default NewLifecycle
+export default index
