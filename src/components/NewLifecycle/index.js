@@ -1,36 +1,35 @@
 import React, { Component } from 'react'
-
-import TemperatureInput from './TemperatureInput'
-import BoilingVerdict from './BoilingVerdict'
-import Dialog from './Dialog'
+import { ThemeContext, themes } from './theme-context'
+import ThemeTogglerButton from './theme-toggler-button'
 
 export class index extends Component {
   constructor(props) {
     super(props)
-    this.textInput = null
-    this.setTextInputRef = element => {
-      this.textInput = element
+    this.toggleTheme = () => {
+      this.setState(state => ({
+        theme: state.theme === themes.dark ? themes.light : themes.dark
+      }))
     }
-
-    this.focusTextInput = () => {
-      if (this.textInput) this.textInput.focus()
+    this.state = {
+      theme: themes.light,
+      toggleTheme: this.toggleTheme
     }
   }
 
-  componentDidMount() {
-    this.focusTextInput()
-  }
+  content = () => (
+    <div>
+      <ThemeTogglerButton />
+    </div>
+  )
 
   render() {
     return (
-      <div>
-        <input type="text" ref={this.setTextInputRef} />
-        <input
-          type="button"
-          value="Focus the text input"
-          onClick={this.focusTextInput}
-        />
-      </div>
+      <React.Fragment>
+        <ThemeContext.Provider value={this.state}>
+          {this.content()}
+        </ThemeContext.Provider>
+        <h1>123</h1>
+      </React.Fragment>
     )
   }
 }
