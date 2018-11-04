@@ -12,6 +12,7 @@ import FilterList from './components/FilterList'
 import FilterListWithColor from './components/FilterListWithColor'
 import Portals from './components/Portals'
 import ErrorBoundaries from './components/ErrorBoundaries'
+import HOC from './components/Hoc'
 
 const App = () => (
   <BrowserRouter>
@@ -31,6 +32,7 @@ const App = () => (
         />
         <Route path="/portals" exact component={Portals} />
         <Route path="/error-boundaries" exact component={ErrorBoundaries} />
+        <Route path="/hoc" exact component={HOC} />
       </Switch>
     </div>
   </BrowserRouter>

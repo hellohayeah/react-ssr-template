@@ -29,6 +29,9 @@ const Menu = () => (
       <li>
         <Link to="error-boundaries">Error Boundaries</Link>
       </li>
+      <li>
+        <Link to="hoc">HOC</Link>
+      </li>
     </ul>
   </nav>
 )
