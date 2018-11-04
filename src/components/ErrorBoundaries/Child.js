@@ -4,14 +4,14 @@ class Child extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      count: 5
+      count: 4
     }
   }
 
   render() {
     const { count } = this.state
     if (count === 5) {
-      throw new Error('sss')
+      throw new Error('不能超過5')
     }
 
     return (
