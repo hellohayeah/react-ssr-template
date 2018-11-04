@@ -24,7 +24,10 @@ const Menu = () => (
         <Link to="filter-list-with-color">篩選顏色</Link>
       </li>
       <li>
-        <Link to="new-lifecycle">新生命週期測試</Link>
+        <Link to="portals">Portals</Link>
+      </li>
+      <li>
+        <Link to="error-boundaries">Error Boundaries</Link>
       </li>
     </ul>
   </nav>

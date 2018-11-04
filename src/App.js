@@ -10,7 +10,8 @@ import RegionSelect from './components/RegionSelect'
 import ImagePreview from './components/ImagePreview'
 import FilterList from './components/FilterList'
 import FilterListWithColor from './components/FilterListWithColor'
-import NewLifecycle from './components/NewLifecycle'
+import Portals from './components/Portals'
+import ErrorBoundaries from './components/ErrorBoundaries'
 
 const App = () => (
   <BrowserRouter>
@@ -28,7 +29,8 @@ const App = () => (
           exact
           component={FilterListWithColor}
         />
-        <Route path="/new-lifecycle" exact component={NewLifecycle} />
+        <Route path="/portals" exact component={Portals} />
+        <Route path="/error-boundaries" exact component={ErrorBoundaries} />
       </Switch>
     </div>
   </BrowserRouter>
