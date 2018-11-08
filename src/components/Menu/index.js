@@ -32,6 +32,9 @@ const Menu = () => (
       <li>
         <Link to="hoc">HOC</Link>
       </li>
+      <li>
+        <Link to="ref">Ref</Link>
+      </li>
     </ul>
   </nav>
 )
