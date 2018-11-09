@@ -22,7 +22,7 @@ class ErrorBoundaries extends Component {
     if (error) {
       return (
         <div>
-          <h2>Something went wrong.</h2>
+          <h2>出錯了，ㄏ</h2>
         </div>
       )
     }

@@ -4,8 +4,12 @@ class Child extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      count: 4
+      count: 1
     }
+  }
+
+  handleClick = () => {
+    this.setState({ count: this.state.count + 1 });
   }
 
   render() {
@@ -16,7 +20,8 @@ class Child extends Component {
 
     return (
       <div>
-        <h1>I am child</h1>
+        {count}
+        <button onClick={this.handleClick}>+1</button>
       </div>
     )
   }
