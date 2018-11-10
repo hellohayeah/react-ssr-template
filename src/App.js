@@ -14,6 +14,7 @@ import Portals from './components/Portals'
 import ErrorBoundaries from './components/ErrorBoundaries'
 import HOC from './components/Hoc'
 import REF from './components/Ref'
+import RenderProp from './components/RenderProp'
 
 const App = () => (
   <BrowserRouter>
@@ -35,6 +36,7 @@ const App = () => (
         <Route path="/error-boundaries" exact component={ErrorBoundaries} />
         <Route path="/hoc" exact component={HOC} />
         <Route path="/ref" exact component={REF} />
+        <Route path="/render-prop" exact component={RenderProp} />
       </Switch>
     </div>
   </BrowserRouter>

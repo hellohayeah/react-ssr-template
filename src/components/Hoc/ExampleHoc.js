@@ -1,5 +1,3 @@
-import React, { Component } from 'react'
-
 const ExampleHoc = WrappedComponent => {
   return class extends WrappedComponent {
     render() {
