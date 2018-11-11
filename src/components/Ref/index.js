@@ -2,12 +2,17 @@ import React, { Component } from 'react'
 import './style.scss'
 
 class Ref extends Component {
-  focus = () => this.textInput.focus()
+  constructor(props) {
+    super(props)
+    this.textInput = React.createRef()
+  }
+
+  focus = () => this.textInput.current.focus()
 
   render() {
     return (
       <div className="ref">
-        <input type="text" ref={input => (this.textInput = input)} />
+        <input type="text" ref={this.textInput} />
         <button onClick={this.focus}>focus input</button>
       </div>
     )
