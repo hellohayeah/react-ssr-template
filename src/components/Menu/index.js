@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './style.scss'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './style.scss';
 
 const Menu = () => (
   <nav className="menu">
@@ -35,8 +35,11 @@ const Menu = () => (
       <li>
         <Link to="ref">Ref</Link>
       </li>
+      <li>
+        <Link to="render-prop">Render prop</Link>
+      </li>
     </ul>
   </nav>
-)
+);
 
-export default Menu
+export default Menu;

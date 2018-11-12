@@ -12,7 +12,7 @@ class RegionSelect extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({ cities: data })
   }
 
