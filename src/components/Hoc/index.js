@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import ExampleHoc from './ExampleHoc'
+import ChangeRender from './ChangeRender'
 import './style.scss'
 
 class Hoc extends Component {
   constructor() {
     super()
     this.state = {
-      usual: 'usual'
+      usual: 'usual',
+      loggedIn: false
     }
   }
 
@@ -14,9 +15,13 @@ class Hoc extends Component {
     console.log('didMount')
   }
 
+  logout = () => {
+    this.setState({loggedIn: false})
+  }
+
   render() {
-    return <div>Usual</div>
+    return <div>{this.props.data}</div>
   }
 }
 
-export default ExampleHoc(Hoc)
+export default ChangeRender(Hoc, 'data')

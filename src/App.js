@@ -20,22 +20,24 @@ const App = () => (
     <div className="App">
       <Header />
       <Menu />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/password" exact component={Password} />
-        <Route path="/region-select" exact component={RegionSelect} />
-        <Route path="/image-preview" exact component={ImagePreview} />
-        <Route path="/filter-list" exact component={FilterList} />
-        <Route
-          path="/filter-list-with-color"
-          exact
-          component={FilterListWithColor}
-        />
-        <Route path="/portals" exact component={Portals} />
-        <Route path="/error-boundaries" exact component={ErrorBoundaries} />
-        <Route path="/hoc" exact component={HOC} />
-        <Route path="/ref" exact component={REF} />
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/password" exact component={Password} />
+          <Route path="/region-select" exact component={RegionSelect} />
+          <Route path="/image-preview" exact component={ImagePreview} />
+          <Route path="/filter-list" exact component={FilterList} />
+          <Route
+            path="/filter-list-with-color"
+            exact
+            component={FilterListWithColor}
+          />
+          <Route path="/portals" exact component={Portals} />
+          <Route path="/error-boundaries" exact component={ErrorBoundaries} />
+          <Route path="/hoc" exact component={HOC} />
+          <Route path="/ref" exact component={REF} />
+        </Switch>
+      </div>
     </div>
   </BrowserRouter>
 )
