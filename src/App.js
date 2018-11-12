@@ -15,6 +15,7 @@ import ErrorBoundaries from './components/ErrorBoundaries'
 import HOC from './components/Hoc'
 import REF from './components/Ref'
 import RenderProp from './components/RenderProp'
+import ReactApi from './components/ReactApi'
 
 const App = () => (
   <BrowserRouter>
@@ -39,6 +40,7 @@ const App = () => (
             <Route path="/hoc" exact component={HOC} />
             <Route path="/ref" exact component={REF} />
             <Route path="/render-prop" exact component={RenderProp} />
+            <Route path="/react-api" exact component={ReactApi} />
           </Switch>
         </React.StrictMode>
       </div>

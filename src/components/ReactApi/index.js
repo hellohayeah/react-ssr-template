@@ -6,12 +6,25 @@ class ReactApi extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      now: 1
+      now: Date.now()
     };
   }
 
+  componentDidMount() {
+    this.now();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.now());
+  }
+
+  now = () => {
+    setInterval(() => {
+      this.setState({ now: Date.now() });
+    }, 1000);
+  };
+
   render() {
-    console.log('ReactApi');
     return (
       <div className="react-api">
         {this.state.now}

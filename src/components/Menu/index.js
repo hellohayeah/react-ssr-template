@@ -38,10 +38,10 @@ const Menu = () => (
       <li>
         <Link to="render-prop">Render prop</Link>
       </li>
+      <li>
+        <Link to="react-api">React API</Link>
+      </li>
     </ul>
-    <li>
-      <Link to="react-api">React API</Link>
-    </li>
   </nav>
 );
 
