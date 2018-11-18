@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './style.scss';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './style.scss'
 
 const Menu = () => (
   <nav className="menu">
@@ -41,8 +41,11 @@ const Menu = () => (
       <li>
         <Link to="react-api">React API</Link>
       </li>
+      <li>
+        <Link to="life-cycle">Life Cycle</Link>
+      </li>
     </ul>
   </nav>
-);
+)
 
-export default Menu;
+export default Menu

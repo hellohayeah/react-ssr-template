@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import './style.scss';
-import TestPure from './TestPure';
+import React, { Component } from 'react'
+import './style.scss'
+import TestPure from './TestPure'
 
 class ReactApi extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       now: Date.now()
-    };
+    }
   }
 
   componentDidMount() {
-    this.now();
+    this.now()
   }
 
   componentWillUnmount() {
-    clearInterval(this.now());
+    clearInterval(this.now())
   }
 
   now = () => {
     setInterval(() => {
-      this.setState({ now: Date.now() });
-    }, 1000);
-  };
+      this.setState({ now: Date.now() })
+    }, 1000)
+  }
 
   render() {
     return (
@@ -30,8 +30,8 @@ class ReactApi extends Component {
         {this.state.now}
         <TestPure />
       </div>
-    );
+    )
   }
 }
 
-export default ReactApi;
+export default ReactApi

@@ -16,6 +16,7 @@ import HOC from './components/Hoc'
 import REF from './components/Ref'
 import RenderProp from './components/RenderProp'
 import ReactApi from './components/ReactApi'
+import LifeCycle from './components/LifeCycle'
 
 const App = () => (
   <BrowserRouter>
@@ -23,26 +24,27 @@ const App = () => (
       <Header />
       <Menu />
       <div className="container">
-        <React.StrictMode>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/password" exact component={Password} />
-            <Route path="/region-select" exact component={RegionSelect} />
-            <Route path="/image-preview" exact component={ImagePreview} />
-            <Route path="/filter-list" exact component={FilterList} />
-            <Route
-              path="/filter-list-with-color"
-              exact
-              component={FilterListWithColor}
-            />
-            <Route path="/portals" exact component={Portals} />
-            <Route path="/error-boundaries" exact component={ErrorBoundaries} />
-            <Route path="/hoc" exact component={HOC} />
-            <Route path="/ref" exact component={REF} />
-            <Route path="/render-prop" exact component={RenderProp} />
-            <Route path="/react-api" exact component={ReactApi} />
-          </Switch>
-        </React.StrictMode>
+        {/* <React.StrictMode> */}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/password" exact component={Password} />
+          <Route path="/region-select" exact component={RegionSelect} />
+          <Route path="/image-preview" exact component={ImagePreview} />
+          <Route path="/filter-list" exact component={FilterList} />
+          <Route
+            path="/filter-list-with-color"
+            exact
+            component={FilterListWithColor}
+          />
+          <Route path="/portals" exact component={Portals} />
+          <Route path="/error-boundaries" exact component={ErrorBoundaries} />
+          <Route path="/hoc" exact component={HOC} />
+          <Route path="/ref" exact component={REF} />
+          <Route path="/render-prop" exact component={RenderProp} />
+          <Route path="/react-api" exact component={ReactApi} />
+          <Route path="/life-cycle" exact component={LifeCycle} />
+        </Switch>
+        {/* </React.StrictMode> */}
       </div>
     </div>
   </BrowserRouter>
