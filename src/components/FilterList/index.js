@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './style.scss'
 
-import items from './repos'
+import items from './repos.json'
 
 class FilterList extends Component {
   constructor(props) {
