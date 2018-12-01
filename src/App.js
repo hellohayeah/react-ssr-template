@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import styled, { css } from 'styled-components'
 import './assets/style.scss'
 
 import Header from './components/Header'
@@ -19,46 +18,10 @@ import RenderProp from './components/RenderProp'
 import ReactApi from './components/ReactApi'
 import LifeCycle from './components/LifeCycle'
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
-`
-
-const Container = styled.div`
-  text-align: center;
-`
-
-const Button = styled.button`
-  background-color: transparent;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 1em;
-  padding: 0.25em 1em;
-  ${props =>
-    props.primary &&
-    css`
-      background: palevioletred;
-      color: white;
-    `}
-`
-
 const App = () => (
   <BrowserRouter>
     <div className="App">
       <Header />
-      <Wrapper>
-        <Title>Hello Style Component</Title>
-        <Container>
-          <Button>I'm a Normal Button!</Button>
-          <Button primary>I'm a Primary Button!</Button>
-        </Container>
-      </Wrapper>
       <Menu />
       <div className="container">
         {/* <React.StrictMode> */}
