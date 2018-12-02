@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-export interface HelloProps {
+export interface AppProps {
   compiler: string
   framework: string
 }
 
-class Hello extends React.Component<HelloProps, {}> {
+class App extends React.Component<AppProps, {}> {
   render() {
     const { compiler, framework } = this.props
     return (
@@ -16,4 +16,4 @@ class Hello extends React.Component<HelloProps, {}> {
   }
 }
 
-export default Hello
+export default App
