@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import './style.scss'
 
-import logo from '../../assets/logo.svg'
+import logo = require('../../assets/logo.svg')
 
-class Header extends Component {
+class Header extends React.Component {
   render() {
     return (
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={String(logo)} className="App-logo" alt="logo" />
         <h1 className="App-title">Welcome to React</h1>
       </header>
     )

@@ -1,19 +1,28 @@
 import * as React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import './assets/style.scss'
 
-export interface AppProps {
-  compiler: string
-  framework: string
-}
+// Components
+import Header from './components/Header'
+import Menu from './components/Menu'
 
-class App extends React.Component<AppProps, {}> {
-  render() {
-    const { compiler, framework } = this.props
-    return (
-      <h1>
-        Hello! from {compiler} and {framework}!
-      </h1>
-    )
-  }
-}
+// Pages
+import Home from './components/Home'
+
+const App = () => (
+  <BrowserRouter>
+    <div className="App">
+      {/* <React.StrictMode> */}
+      <Header />
+      <Menu />
+      <div className="container">
+        <Switch>
+          <Route path="/" exact component={Home} />
+        </Switch>
+        {/* </React.StrictMode> */}
+      </div>
+    </div>
+  </BrowserRouter>
+)
 
 export default App
