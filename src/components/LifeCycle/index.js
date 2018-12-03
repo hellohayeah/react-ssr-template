@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './style.scss'
+import styles from './style.scss'
 
 class LifeCycle extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class LifeCycle extends Component {
     const { count } = this.state
     console.log('render')
     return (
-      <div className="life-cycle">
+      <div className={styles.lifeCycle}>
         <p>{count}</p>
         <button onClick={this.addCount}>+1</button>
       </div>

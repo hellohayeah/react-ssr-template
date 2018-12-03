@@ -2,15 +2,11 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.tsx',
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
-  },
+  entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js'
   },
-  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -18,11 +14,6 @@ module.exports = {
         exclude: '/node_modules/',
         use: { loader: 'babel-loader' }
       },
-      {
-        test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
-      },
-      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader']

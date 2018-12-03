@@ -1,12 +1,4 @@
-import * as React from 'react'
-
-class Home extends React.Component {
-  render() {
-    return <div className="home">Hello!!</div>
-  }
-}
-
-export default Home
+import React, { Component } from 'react'
 // import styled, {
 //   css,
 //   keyframes,
@@ -14,7 +6,7 @@ export default Home
 //   className
 // } from 'styled-components'
 // import StyleTest from './StyleTest'
-// import './style.scss'
+import styles from './style.scss'
 
 // const size = {
 //   desktop: 1200,
@@ -44,17 +36,20 @@ export default Home
 //   ${media.phone`background: palevioletred;`}
 // `
 
-// class Home extends Component {
-//   constructor(props) {
-//     super(props)
-//     this.inputRef = React.createRef()
-//   }
+class Home extends Component {
+  constructor(props) {
+    super(props)
+    this.inputRef = React.createRef()
+  }
 
-//   render() {
-//     return (
-//       <div className="home">
-//         <Button>123</Button>
-//       </div>
-//     )
-//   }
-// }
+  render() {
+    return (
+      <div className={styles.home}>
+        <div className="life-cycle">123</div>
+        <p>123</p>
+      </div>
+    )
+  }
+}
+
+export default Home
