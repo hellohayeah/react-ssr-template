@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { HomeStyle, ButtonStyle } from './style'
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
-    return <div className="home">home</div>;
+    return (
+      <HomeStyle>
+        Hello World!
+        <div className="btns-box">
+          <ButtonStyle borderLinear>登入</ButtonStyle>
+          <ButtonStyle as="a">註冊</ButtonStyle>
+        </div>
+      </HomeStyle>
+    )
   }
 }
 
-export default Home;
+export default Home
