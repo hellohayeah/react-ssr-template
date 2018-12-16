@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
-import { HomeStyle, ButtonStyle } from './style'
+import { HomeStyle, Rotate } from './style'
 
 class Home extends Component {
+  reverseText = props => {
+    console.log(props)
+    return <button {...props} children={props.children.split('').reverse()} />
+  }
+
   render() {
     return (
       <HomeStyle>
-        Hello World!
-        <div className="btns-box">
-          <ButtonStyle borderLinear>登入</ButtonStyle>
-          <ButtonStyle as="a">註冊</ButtonStyle>
-        </div>
+        <Rotate>&lt; 💅 &gt;</Rotate>
       </HomeStyle>
     )
   }
