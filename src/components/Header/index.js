@@ -5,10 +5,10 @@ import logo from '../../assets/logo.svg'
 class Header extends Component {
   render() {
     return (
-    <HeaderStyle>
-      <img src={logo} alt="logo"/>
-      <h1>Welcome to React</h1>
-    </HeaderStyle>
+      <HeaderStyle>
+        <img src={logo} alt="logo" />
+        <h1>Welcome to React</h1>
+      </HeaderStyle>
     )
   }
 }

@@ -7,4 +7,4 @@ export const HeaderStyle = styled.div`
   img {
     width: 300px;
   }
-`;
+`
