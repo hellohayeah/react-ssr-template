@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 
 import Header from './components/Header'
 import Home from './components/Home'
+import About from './components/About'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,7 +22,8 @@ const App = () => (
       <Header />
       <div className="container">
         <Switch>
-          <Route path="/" exac component={Home} />
+          <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={About} />
         </Switch>
       </div>
     </React.StrictMode>

@@ -1,3 +1,9 @@
+# 打包檔案
+/dist
+
+# Mac 垃圾檔案
 .DS_Store
+
+# 模組檔案
 node_modules/
 package-lock.json
