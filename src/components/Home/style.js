@@ -1,3 +1,3 @@
 import styled from 'styled-components'
 
-export const AboutStyle = styled.div``
+export const HomeStyle = styled.div``
