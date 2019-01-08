@@ -1,10 +1,10 @@
 import React from 'react'
+import { Switch } from 'react-router'
+import { renderRoutes } from 'react-router-config'
 import { createGlobalStyle } from 'styled-components'
-import { Route, Switch } from 'react-router-dom'
+import routes from './router'
 
 import Header from './components/Header'
-import Home from './components/Home'
-import About from './components/About'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,10 +21,7 @@ const App = () => (
     <React.StrictMode>
       <Header />
       <div className="container">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" exact component={About} />
-        </Switch>
+        <Switch>{renderRoutes(routes)}</Switch>
       </div>
     </React.StrictMode>
   </div>

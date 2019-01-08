@@ -4,9 +4,9 @@ import { AboutStyle } from './style'
 class About extends Component {
   render() {
     return (
-    <AboutStyle>
-      About
-    </AboutStyle>
+      <AboutStyle>
+        <h2>About</h2>
+      </AboutStyle>
     )
   }
 }
