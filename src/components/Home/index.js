@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import { HomeStyle } from './style'
+import Footer from './Footer'
+import AddTodo from '../../containers/AddTodo'
+import VisibleTodoList from '../../containers/VisibleTodoList'
 
 class Home extends Component {
   render() {
     return (
       <HomeStyle>
-        <h2>Home</h2>
+        <AddTodo />
+        <VisibleTodoList />
+        <Footer />
       </HomeStyle>
     )
   }
