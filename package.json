@@ -10,6 +10,7 @@
   "author": "Diego",
   "license": "MIT",
   "dependencies": {
+    "cross-fetch": "^3.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
