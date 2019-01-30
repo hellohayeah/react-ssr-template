@@ -1,29 +1,54 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import { fetchPosts } from '../actions'
-
+import { selectSubreddit, fetchPostsIfNeeded } from '../actions'
+import Picker from '../components/picker'
 import Post from '../components/post'
 
 export class AsyncApp extends Component {
   componentDidMount() {
-    this.props.dispatch(fetchPosts('reactjs'))
+    const { dispatch, selectedSubreddit } = this.props
+    dispatch(fetchPostsIfNeeded(selectedSubreddit))
+  }
+
+  handleChange = nextSelected => {
+    const { dispatch } = this.props
+    dispatch(selectSubreddit(nextSelected))
+    dispatch(fetchPostsIfNeeded(nextSelected))
   }
 
   render() {
-    const { posts } = this.props
+    const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props
     console.log(posts)
     return (
       <div>
-        {posts == null && <h2>Loading...</h2>}
-        {posts != null && <Post posts={posts} />}
+        <Picker
+          value={selectedSubreddit}
+          onChange={this.handleChange}
+          options={['reactjs', 'frontend']}
+        />
+        {isFetching && posts.length === 0 && <h2>Loading...</h2>}
+        {!isFetching && posts.length === 0 && <h2>Empty.</h2>}
+        {posts.length > 0 && <Post posts={posts} />}
       </div>
     )
   }
 }
 
-const mapStateToProps = state => ({
-  posts: state.postsBySubreddit.items
-})
+const mapStateToProps = state => {
+  const { selectedSubreddit, postsBySubreddit } = state
+  const { isFetching, lastUpdated, items: posts } = postsBySubreddit[
+    selectedSubreddit
+  ] || {
+    isFetching: true,
+    items: []
+  }
+
+  return {
+    selectedSubreddit,
+    posts,
+    isFetching,
+    lastUpdated
+  }
+}
 
 export default connect(mapStateToProps)(AsyncApp)

@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux'
-import { postsBySubreddit } from './postsBySubreddit'
+import { selectedSubreddit, postsBySubreddit } from './postsBySubreddit'
 
-export default combineReducers({ postsBySubreddit })
+export default combineReducers({ selectedSubreddit, postsBySubreddit })
