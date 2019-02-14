@@ -2,11 +2,29 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
+    home: './src/components/Home/index.js',
+    about: './src/components/About/index.js'
   },
   output: {
     path: path.join(__dirname, '../dist'),
     filename: '[name].[hash].js'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        commons: {
+          chunks: 'initial',
+          minChunks: 2,
+          maxInitialRequests: 5,
+          minSize: 0
+        }
+      }
+    },
+    runtimeChunk: {
+      name: 'manifest'
+    }
   },
   module: {
     rules: [
