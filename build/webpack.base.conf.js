@@ -8,6 +8,11 @@ module.exports = {
     path: path.join(__dirname, '../dist'),
     filename: '[name].[hash].js'
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   module: {
     rules: [
       {
