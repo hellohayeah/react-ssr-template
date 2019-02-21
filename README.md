@@ -4,8 +4,8 @@
 
 ## 主要功能
 
-- React: v16.7
-- React-Router: v4.3.1
+- React: v16.8.2
+- react-router-dom: v4.3.1
 - Redux: v4.0.1
 - styled-components: v4.1.3
-- Webpack: v4.27.1
+- Webpack: v4.29.3

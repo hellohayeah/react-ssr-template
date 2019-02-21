@@ -12,9 +12,6 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-<<<<<<< HEAD
-      chunks: 'all'
-=======
       chunks: 'all',
       cacheGroups: {
         commons: {
@@ -27,7 +24,6 @@ module.exports = {
     },
     runtimeChunk: {
       name: 'manifest'
->>>>>>> eae0cc15750f4f30e138ab8f82bb0b0d7f47705e
     }
   },
   module: {
