@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { selectSubreddit, fetchPostsIfNeeded } from '../actions'
-import Picker from '../components/picker'
-import Post from '../components/post'
+import { selectSubreddit, fetchPostsIfNeeded } from '../../actions'
+import Picker from './picker'
+import Post from './post'
 
 export class AsyncApp extends Component {
   componentDidMount() {
