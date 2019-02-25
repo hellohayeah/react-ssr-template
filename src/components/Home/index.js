@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { HomeStyle } from './style'
 
-import AsyncApp from '../../containers/AsyncApp/index'
+import Container1 from '../../containers/Container1'
 
 class Home extends Component {
   render() {
     return (
       <HomeStyle>
-        <AsyncApp />
+        <Container1 />
       </HomeStyle>
     )
   }
