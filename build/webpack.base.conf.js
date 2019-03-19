@@ -7,24 +7,7 @@ module.exports = {
     about: './src/components/About/index.js'
   },
   output: {
-    path: path.join(__dirname, '../dist'),
-    filename: '[name].[hash].js'
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      cacheGroups: {
-        commons: {
-          chunks: 'initial',
-          minChunks: 2,
-          maxInitialRequests: 5,
-          minSize: 0
-        }
-      }
-    },
-    runtimeChunk: {
-      name: 'manifest'
-    }
+    path: path.join(__dirname, '../dist')
   },
   module: {
     rules: [

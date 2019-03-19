@@ -2,30 +2,23 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import * as ACTION from '../store/actions'
-import * as ACTION_TYPE from '../store/actions/action_type'
 
-class Container1 extends Component {
-  render() {
-    const user_text = 'user text'
-    console.log(this.props)
+const Container1 = props => {
+  const user_text = 'user text'
+  console.log(props)
 
-    return (
-      <div>
-        <button onClick={() => this.props.action1()}>SUCCESS</button>
-        <button onClick={() => this.props.action2()}>FAILURE</button>
-        <button onClick={() => this.props.action_creator1()}>
-          SUCCESS creator
-        </button>
-        <button onClick={() => this.props.action_creator2()}>
-          FAILURE creator
-        </button>
-        <button onClick={() => this.props.action_creator3(user_text)}>
-          user input
-        </button>
-        {this.props.stateprop1 ? <h1>{this.props.user_text}</h1> : null}
-      </div>
-    )
-  }
+  return (
+    <div>
+      <button onClick={() => props.action1()}>SUCCESS</button>
+      <button onClick={() => props.action2()}>FAILURE</button>
+      <button onClick={() => props.action_creator1()}>SUCCESS creator</button>
+      <button onClick={() => props.action_creator2()}>FAILURE creator</button>
+      <button onClick={() => props.action_creator3(user_text)}>
+        user input
+      </button>
+      {props.stateprop1 ? <h1>{props.user_text}</h1> : null}
+    </div>
+  )
 }
 
 function mapStateToProps(state) {

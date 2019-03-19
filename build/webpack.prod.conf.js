@@ -8,5 +8,24 @@ module.exports = merge(common, {
     new CleanWebpackPlugin(['dist'], {
       root: process.cwd()
     })
-  ]
+  ],
+  output: {
+    filename: '[name].[hash].js'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        commons: {
+          chunks: 'initial',
+          minChunks: 2,
+          maxInitialRequests: 5,
+          minSize: 0
+        }
+      }
+    },
+    runtimeChunk: {
+      name: 'manifest'
+    }
+  }
 })

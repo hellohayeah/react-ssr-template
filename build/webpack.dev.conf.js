@@ -9,6 +9,9 @@ module.exports = merge(common, {
       template: './public/index.html'
     })
   ],
+  output: {
+    filename: '[name].bundle.js'
+  },
   devServer: {
     // react router reload
     historyApiFallback: true
