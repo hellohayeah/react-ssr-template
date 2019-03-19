@@ -10,7 +10,6 @@ class Header extends Component {
         <img className="logo" src={logo} alt="logo" />
         <h1>Welcome to React</h1>
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
       </HeaderStyle>
     )
   }
