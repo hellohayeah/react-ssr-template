@@ -1,10 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { HomeStyle } from './style'
+import Parent from '../../containers/parent'
 
-class Home extends Component {
-  render() {
-    return <HomeStyle>Home</HomeStyle>
-  }
+const Home = () => {
+  return (
+    <HomeStyle>
+      <Parent />
+    </HomeStyle>
+  )
 }
 
 export default Home

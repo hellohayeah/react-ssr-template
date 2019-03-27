@@ -18,12 +18,10 @@ const GlobalStyle = createGlobalStyle`
 const App = () => (
   <div className="App">
     <GlobalStyle />
-    {/* <React.StrictMode> */}
     <Header />
     <div className="container">
       <Switch>{renderRoutes(routes)}</Switch>
     </div>
-    {/* </React.StrictMode> */}
   </div>
 )
 
