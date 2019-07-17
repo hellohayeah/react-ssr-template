@@ -1,11 +1,8 @@
-# React 專案管理練習
+# React Project Start
 
-慢慢建立專案，建立舒適開發環境。
+## Version
 
-## 主要功能
-
-- React: v16.8.2
-- react-router-dom: v4.3.1
-- Redux: v4.0.1
-- styled-components: v4.1.3
-- Webpack: v4.29.3
+- React: v16.8.5
+- react-router-dom: v4.4.0-beta.8
+- Webpack: v4.29.6
+- CSS Moudels

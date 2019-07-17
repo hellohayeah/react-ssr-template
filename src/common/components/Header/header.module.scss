@@ -1,0 +1,11 @@
+.header {
+  background-color: #282c35;
+  color: white;
+  padding: 20px;
+  :global {
+    .logo {
+      width: 300px;
+      animation: rotate 10s linear infinite;
+    }
+  }
+}

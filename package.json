@@ -4,19 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "build": "webpack --config build/webpack.prod.conf.js"
+    "start": "npm run dev:client && npm run dev:server && node ./dist/server/server",
+    "dev:server": "webpack --config config/server.dev.js",
+    "dev:client": "webpack --config config/client.dev.js",
+    "build": "npm run build:client && npm run build:server",
+    "build:server": "webpack --config config/server.prod.js",
+    "build:client": "webpack --config config/client.prod.js"
   },
-  "author": "Diego",
+  "author": "Jerry",
   "license": "MIT",
   "dependencies": {
     "cross-fetch": "^3.0.1",
+    "express": "^4.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-router-config": "^4.4.0-beta.8",
-    "react-router-dom": "^4.3.1",
-    "styled-components": "^4.1.3"
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -25,16 +29,20 @@
     "autoprefixer": "^9.5.0",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^1.0.1",
+    "css-hot-loader": "^1.4.4",
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.9.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^2.1.6",
+    "resolve-url-loader": "^3.1.0",
     "sass-loader": "^7.0.3",
-    "style-loader": "^0.21.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1",
-    "webpack-merge": "^4.1.4"
+    "webpack-dev-middleware": "^3.7.0",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^4.1.4",
+    "webpack-node-externals": "^1.7.2"
   }
 }
