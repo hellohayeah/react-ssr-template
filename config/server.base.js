@@ -5,10 +5,11 @@ const paths = require('../utils/paths')
 const serverConfig = {
   target: 'node',
   entry: {
-    server: paths.ServerSrc
+    server: paths.serverSrc
   },
   output: {
     path: paths.serverBuild,
+    publicPath: paths.publicPath,
     filename: '[name].js'
   },
   module: {
@@ -44,23 +45,25 @@ const serverConfig = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
+        exclude: [/\.(js|css|scss)$/],
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[hash:8].[ext]',
-              outputPath: 'assets',
+              name: 'assets/[name].[hash:8].[ext]',
               emitFile: false
             }
           }
         ]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|mp4)?$/,
+        test: /\.(woff|woff2|eot|ttf|mp4|png|jpe?g|gif|svg)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000
+          limit: 2048,
+          name: '[hash:8].[ext]',
+          outputPath: 'assets',
+          emitFile: false
         }
       }
     ]

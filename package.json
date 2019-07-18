@@ -14,9 +14,14 @@
   "author": "Jerry",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-manifest-helpers": "^0.6.0",
+    "history": "^4.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
     "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
@@ -39,6 +44,7 @@
     "webpack-cli": "^3.3.6",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-hot-middleware": "^2.25.0",
+    "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2"
   }

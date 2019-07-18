@@ -1,5 +1,7 @@
+const path = require('path')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ManifestPlugin = require('webpack-manifest-plugin')
 const paths = require('../utils/paths')
 
 module.exports = {
@@ -8,10 +10,15 @@ module.exports = {
     bundle: paths.clientSrc
   },
   output: {
-    path: paths.clientBuild,
-    filename: '[name].js'
+    path: path.join(paths.clientBuild, paths.publicPath),
+    publicPath: paths.publicPath,
+    filename: '[name].js',
+    chunkFilename: '[name].[chunkhash:8].chunk.js'
   },
-  plugins: [new OptimizeCssAssetsPlugin()],
+  plugins: [
+    new OptimizeCssAssetsPlugin(),
+    new ManifestPlugin({ fileName: 'manifest.json' })
+  ],
   module: {
     rules: [
       {
@@ -56,24 +63,40 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
+        exclude: [/\.(js|css|scss)$/],
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[hash:8].[ext]',
-              outputPath: 'assets'
+              name: 'assets/[name].[hash:8].[ext]'
             }
           }
         ]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|mp4)?$/,
+        test: /\.(woff|woff2|eot|ttf|mp4|png|jpe?g|gif|svg)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000
+          limit: 2048,
+          name: '[hash:8].[ext]',
+          outputPath: 'assets'
         }
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all'
+        }
+      }
+    }
+  },
+  stats: {
+    chunks: false,
+    chunkModules: false
   }
 }

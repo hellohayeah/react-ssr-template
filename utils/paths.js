@@ -7,8 +7,9 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 const paths = {
   clientSrc: resolveApp('src/client'),
   clientBuild: resolveApp('dist/client'),
-  ServerSrc: resolveApp('src/server'),
-  serverBuild: resolveApp('dist/server')
+  serverSrc: resolveApp('src/server'),
+  serverBuild: resolveApp('dist/server'),
+  publicPath: '/static/'
 }
 
 module.exports = paths
