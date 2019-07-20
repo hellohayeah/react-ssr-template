@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     path: path.join(paths.clientBuild, paths.publicPath),
-    publicPath: paths.publicPath,
+    publicPath: 'http://localhost:3000/',
     filename: '[name].js',
     chunkFilename: '[name].[chunkhash:8].chunk.js'
   },

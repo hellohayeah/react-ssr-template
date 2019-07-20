@@ -6,7 +6,6 @@ const common = require('./client.base')
 
 const clientDevConfig = merge(common, {
   mode: 'development',
-  devtool: 'eval',
   entry: {
     bundle: [
       'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
