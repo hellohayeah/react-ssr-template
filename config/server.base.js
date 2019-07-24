@@ -50,7 +50,8 @@ const serverConfig = {
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/[name].[hash:8].[ext]',
+              outputPath: 'assets',
+              name: '[name].[hash:8].[ext]',
               emitFile: false
             }
           }
@@ -58,13 +59,17 @@ const serverConfig = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|mp4|png|jpe?g|gif|svg)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 2048,
-          name: '[hash:8].[ext]',
-          outputPath: 'assets',
-          emitFile: false
-        }
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 2048,
+              name: '[hash:8].[ext]',
+              outputPath: 'assets',
+              emitFile: false
+            }
+          }
+        ]
       }
     ]
   },

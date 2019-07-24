@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     path: path.join(paths.clientBuild, paths.publicPath),
-    publicPath: 'http://localhost:3000/',
+    publicPath: paths.publicPath,
     filename: '[name].js',
     chunkFilename: '[name].[chunkhash:8].chunk.js'
   },
@@ -68,19 +68,24 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/[name].[hash:8].[ext]'
+              outputPath: 'assets',
+              name: '[name].[hash:8].[ext]'
             }
           }
         ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|mp4|png|jpe?g|gif|svg)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 2048,
-          name: '[hash:8].[ext]',
-          outputPath: 'assets'
-        }
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 2048,
+              name: '[hash:8].[ext]',
+              outputPath: 'assets'
+            }
+          }
+        ]
       }
     ]
   },

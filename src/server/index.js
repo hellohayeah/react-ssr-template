@@ -14,7 +14,7 @@ import clientDevConfig from '../../config/client.dev'
 
 const compiler = webpack(clientDevConfig)
 
-app.use('/', express.static(paths.clientBuild))
+app.use('/static', express.static(paths.clientBuild))
 app.use(webpackDevMiddleware(compiler))
 app.use(webpackHotMiddleware(compiler))
 
