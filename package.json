@@ -14,6 +14,8 @@
   "author": "Jerry",
   "license": "MIT",
   "dependencies": {
+    "@svgr/webpack": "^4.3.2",
+    "babel-plugin-named-asset-import": "^0.3.2",
     "express": "^4.17.1",
     "express-manifest-helpers": "^0.6.0",
     "history": "^4.9.0",

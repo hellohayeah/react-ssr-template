@@ -19,7 +19,20 @@ const serverConfig = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: [
+              [
+                require.resolve('babel-plugin-named-asset-import'),
+                {
+                  loaderMap: {
+                    svg: {
+                      ReactComponent: '@svgr/webpack?-prettier,-svgo![path]'
+                    }
+                  }
+                }
+              ]
+            ],
+            cacheDirectory: true
           }
         }
       },
