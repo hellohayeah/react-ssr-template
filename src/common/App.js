@@ -1,9 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Header from './components/Header'
-import '../assets/styles/_variable.scss'
-import '../assets/styles/_mixins.scss'
 import '../assets/styles/_global.scss'
+import Header from './components/Header'
 
 const App = () => {
   return (
