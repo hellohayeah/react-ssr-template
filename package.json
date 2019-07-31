@@ -16,6 +16,7 @@
   "dependencies": {
     "@svgr/webpack": "^4.3.2",
     "babel-plugin-named-asset-import": "^0.3.2",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-manifest-helpers": "^0.6.0",
     "history": "^4.9.0",
@@ -30,6 +31,7 @@
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
+    "cross-env": "^5.2.0",
     "css-hot-loader": "^1.4.4",
     "css-loader": "^3.0.0",
     "file-loader": "^4.0.0",
