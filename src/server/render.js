@@ -1,10 +1,15 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
+import { StaticRouter as Router } from 'react-router-dom'
 import Template from './Template'
 import App from '../common/App'
 
 const render = () => (req, res) => {
-  const content = renderToString(<App />)
+  const content = renderToString(
+    <Router location={req.url}>
+      <App />
+    </Router>
+  )
 
   return res.send(
     '<!DOCTYPE html>' +
