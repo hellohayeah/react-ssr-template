@@ -7,21 +7,21 @@ const Template = ({ children, css = [], scripts = [] }) => {
   return (
     <html lang="en">
       <head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         {head.base.toComponent()}
         {head.title.toComponent()}
         {head.meta.toComponent()}
         {head.link.toComponent()}
         {head.script.toComponent()}
-        {css.map(href => (
+        {css.filter(Boolean).map(href => (
           <link key={href} rel="stylesheet" href={href} />
         ))}
       </head>
       <body>
         <div id="root" dangerouslySetInnerHTML={{ __html: children }} />
-        {scripts.map(src => (
+        {scripts.filter(Boolean).map(src => (
           <script key={src} src={src} />
         ))}
       </body>

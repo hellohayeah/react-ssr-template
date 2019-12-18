@@ -8,5 +8,8 @@
 node_modules/
 package-lock.json
 
+# 環境變數
+.env
+
 # yarn error
 yarn-error.log
