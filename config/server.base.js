@@ -15,9 +15,9 @@ const serverConfig = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|ts|tsx)$/,
         use: {
-          loader: 'babel-loader',
+          loader: 'awesome-typescript-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
             plugins: [

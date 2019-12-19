@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["common/*", "client/*", "server/*", "*"]
+    }
+  }
+}
