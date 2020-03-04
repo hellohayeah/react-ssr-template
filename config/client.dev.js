@@ -7,11 +7,11 @@ const common = require('./client.base')
 const clientDevConfig = merge(common, {
   mode: 'development',
   output: {
-    publicPath: 'http://localhost:3000/'
+    publicPath: 'http://localhost:8080/'
   },
   entry: {
     bundle: [
-      'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
+      'webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr',
       paths.clientSrc
     ]
   },

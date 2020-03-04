@@ -6,7 +6,7 @@ const common = require('./server.base')
 const serverDevConfig = merge(common, {
   mode: 'development',
   output: {
-    publicPath: 'http://localhost:3000/'
+    publicPath: 'http://localhost:8080/'
   },
   plugins: [
     new MiniCssExtractPlugin({

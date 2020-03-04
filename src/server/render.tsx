@@ -1,10 +1,11 @@
 import React from 'react'
+import express from 'express'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter as Router } from 'react-router-dom'
 import Template from './Template'
 import App from '../common/App'
 
-const render = () => (req, res) => {
+const render = () => (req: express.Request, res: express.Response) => {
   const content = renderToString(
     <Router location={req.url}>
       <App />
@@ -15,14 +16,8 @@ const render = () => (req, res) => {
     '<!DOCTYPE html>' +
       renderToString(
         <Template
-          css={[
-            res.locals.assetPath('bundle.css'),
-            res.locals.assetPath('vendor.css')
-          ]}
-          scripts={[
-            res.locals.assetPath('bundle.js'),
-            res.locals.assetPath('vendor.js')
-          ]}
+          css={[res.locals.assetPath('bundle.css'), res.locals.assetPath('vendor.css')]}
+          scripts={[res.locals.assetPath('bundle.js'), res.locals.assetPath('vendor.js')]}
         >
           {content}
         </Template>

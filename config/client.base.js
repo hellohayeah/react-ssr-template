@@ -15,35 +15,48 @@ module.exports = {
     filename: '[name].js',
     chunkFilename: '[name].[chunkhash:8].chunk.js'
   },
-  plugins: [
-    new OptimizeCssAssetsPlugin(),
-    new ManifestPlugin({ fileName: 'manifest.json' })
-  ],
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
+  },
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM'
+  },
+  plugins: [new OptimizeCssAssetsPlugin(), new ManifestPlugin({ fileName: 'manifest.json' })],
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: '/node_modules/',
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: [
-              [
-                require.resolve('babel-plugin-named-asset-import'),
-                {
-                  loaderMap: {
-                    svg: {
-                      ReactComponent: '@svgr/webpack?-prettier,-svgo![path]'
-                    }
-                  }
-                }
-              ]
-            ],
-            cacheDirectory: true
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'awesome-typescript-loader'
           }
-        }
+        ]
       },
+      // {
+      //   test: /\.js$/,
+      //   exclude: '/node_modules/',
+      //   use: {
+      //     loader: 'babel-loader',
+      //     options: {
+      //       presets: ['@babel/preset-env', '@babel/preset-react'],
+      //       plugins: [
+      //         [
+      //           require.resolve('babel-plugin-named-asset-import'),
+      //           {
+      //             loaderMap: {
+      //               svg: {
+      //                 ReactComponent: '@svgr/webpack?-prettier,-svgo![path]'
+      //               }
+      //             }
+      //           }
+      //         ]
+      //       ],
+      //       cacheDirectory: true
+      //     }
+      //   }
+      // },
       {
         test: /\.(sa|sc|c)ss$/,
         exclude: /\.module\.scss$/,

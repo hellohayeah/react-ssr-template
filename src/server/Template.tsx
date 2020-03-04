@@ -1,7 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-const Template = ({ children, css = [], scripts = [] }) => {
+type Props = {
+  children: any
+  css: string[]
+  scripts: string[]
+}
+
+const Template = ({ children, css = [], scripts = [] }: Props) => {
   const head = Helmet.renderStatic()
 
   return (
