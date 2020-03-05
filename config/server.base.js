@@ -1,97 +1,26 @@
+const path = require('path')
 const nodeExternals = require('webpack-node-externals')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const paths = require('../utils/paths')
+const { loaderServer } = require('./loaders')
+const resolvers = require('./resolvers')
 
 const serverConfig = {
   target: 'node',
   entry: {
-    server: paths.serverSrc
+    server: [
+      require.resolve('core-js/stable'),
+      require.resolve('regenerator-runtime/runtime'),
+      path.resolve(paths.serverSrc)
+    ]
   },
   output: {
     path: paths.serverBuild,
     publicPath: paths.publicPath,
     filename: '[name].js'
   },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
-  },
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM'
-  },
+  resolve: { ...resolvers },
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: [
-              [
-                require.resolve('babel-plugin-named-asset-import'),
-                {
-                  loaderMap: {
-                    svg: {
-                      ReactComponent: '@svgr/webpack?-prettier,-svgo![path]'
-                    }
-                  }
-                }
-              ]
-            ],
-            cacheDirectory: true
-          }
-        }
-      },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        exclude: /\.module\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-      },
-      {
-        test: /\.module\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              modules: {
-                localIdentName: '[local]_[hash:8]'
-              }
-            }
-          },
-          'sass-loader'
-        ]
-      },
-      {
-        exclude: [/\.(js|css|scss)$/],
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'assets',
-              name: '[name].[hash:8].[ext]',
-              emitFile: false
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|mp4|png|jpe?g|gif|svg)?$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 2048,
-              name: '[hash:8].[ext]',
-              outputPath: 'assets',
-              emitFile: false
-            }
-          }
-        ]
-      }
-    ]
+    rules: loaderServer
   },
   externals: nodeExternals({
     whitelist: /\.(sa|sc|c)ss$/

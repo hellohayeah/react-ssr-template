@@ -5,7 +5,7 @@ import paths from '../../utils/paths'
 import render from './render'
 
 const app = express()
-const port = 3000
+const port = 8080
 
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'

@@ -8,6 +8,10 @@
     "target": "es6",
     "jsx": "react",
     "allowJs": true,
+    "paths": {
+      "*": ["common/*", "client/*", "server/*", "*"]
+    }
   },
+  "include": ["src"],
   "exclude": ["blueprint-templates"]
 }
