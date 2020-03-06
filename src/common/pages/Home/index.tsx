@@ -1,12 +1,6 @@
 import React from 'react'
-import s from './Home.module.scss';
+import s from './Home.module.scss'
 
-const Home = () => {
-  return (
-    <div className="home">
-      Home
-    </div>
-  )
-}
+const Home: React.FC = () => <div className={s.home}>Home Page</div>
 
 export default Home

@@ -1,14 +1,17 @@
-@import "../../../assets/styles/variable";
-@import "../../../assets/styles/mixins";
+@import '../../../assets/styles/variable';
+@import '../../../assets/styles/mixins';
 
 .header {
   background-color: #282c34;
   color: white;
-  padding: 20px;
-  :global {
-    .logo {
-      width: 350px;
-      animation: rotate infinite 20s linear;
-    }
+  text-align: center;
+  h2 {
+    margin: 0;
+    padding-bottom: 20px;
   }
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
 }

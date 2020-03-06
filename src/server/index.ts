@@ -15,7 +15,11 @@ import clientDevConfig from '../../config/client.dev'
 const compiler = webpack(clientDevConfig)
 
 app.use('/static', express.static(paths.clientBuild))
-app.use(webpackDevMiddleware(compiler))
+app.use(
+  webpackDevMiddleware(compiler, {
+    publicPath: clientDevConfig.output.publicPath
+  })
+)
 app.use(webpackHotMiddleware(compiler))
 
 const manifestPath = path.join(paths.clientBuild, paths.publicPath)

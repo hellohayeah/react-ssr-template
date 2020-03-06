@@ -1,7 +1,15 @@
-# React Server Side Template
+# React Server Side With TypeScript
 
-## Features
+## Usage
 
-## Installation
+### installation
 
-`npm install` or `yarn install`
+`yarn install`
+
+### development
+
+`yarn start`
+
+### building
+
+`yarn build`
