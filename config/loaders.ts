@@ -1,4 +1,4 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const babelLoader = {
   test: /\.(js|jsx|ts|tsx)$/,
@@ -127,8 +127,5 @@ const fileLoaderServer = {
   ]
 }
 
-const loaderClient = [babelLoader, cssModueleLoaderClient, cssLoaderClient, urlLoaderClient, fileLoaderClient]
-
-const loaderServer = [babelLoader, cssModueleLoaderServer, cssLoaderServer, urlLoaderServer, fileLoaderServer]
-
-module.exports = { loaderClient, loaderServer }
+export const clientLoaders = [babelLoader, cssModueleLoaderClient, cssLoaderClient, urlLoaderClient, fileLoaderClient]
+export const loaderServer = [babelLoader, cssModueleLoaderServer, cssLoaderServer, urlLoaderServer, fileLoaderServer]

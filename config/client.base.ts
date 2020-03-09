@@ -1,11 +1,12 @@
-const path = require('path')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const ManifestPlugin = require('webpack-manifest-plugin')
-const paths = require('../utils/paths')
-const { loaderClient } = require('./loaders')
-const resolvers = require('./resolvers')
+import webpack from 'webpack'
+import path from 'path'
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin'
+import ManifestPlugin from 'webpack-manifest-plugin'
+import paths from '../utils/paths'
+import { clientLoaders } from './loaders'
+import resolvers from './resolvers'
 
-module.exports = {
+const config: webpack.Configuration = {
   target: 'web',
   entry: {
     bundle: path.resolve(paths.clientSrc)
@@ -19,7 +20,7 @@ module.exports = {
   plugins: [new OptimizeCssAssetsPlugin(), new ManifestPlugin({ fileName: 'manifest.json' })],
   resolve: { ...resolvers },
   module: {
-    rules: loaderClient
+    rules: clientLoaders
   },
   optimization: {
     splitChunks: {
@@ -37,3 +38,5 @@ module.exports = {
     chunkModules: false
   }
 }
+
+export default config

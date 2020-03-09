@@ -1,10 +1,10 @@
-const path = require('path')
-const fs = require('fs')
+import path from 'path'
+import fs from 'fs'
 
 const appDirectory = fs.realpathSync(process.cwd())
-const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
+const resolveApp = (relativePath: string) => path.resolve(appDirectory, relativePath)
 
-const paths = {
+const paths: any = {
   clientSrc: resolveApp('src/client'),
   clientBuild: resolveApp('dist/client'),
   serverSrc: resolveApp('src/server'),
@@ -12,4 +12,4 @@ const paths = {
   publicPath: '/static/'
 }
 
-module.exports = paths
+export default paths

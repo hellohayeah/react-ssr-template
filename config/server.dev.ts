@@ -1,9 +1,9 @@
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const common = require('./server.base')
+import webpack from 'webpack'
+import merge from 'webpack-merge'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import common from './server.base'
 
-const serverDevConfig = merge(common, {
+const serverDevConfig: webpack.Configuration = merge(common, {
   mode: 'development',
   output: {
     publicPath: 'http://localhost:8080/'
@@ -21,4 +21,4 @@ const serverDevConfig = merge(common, {
   }
 })
 
-module.exports = serverDevConfig
+export default serverDevConfig
