@@ -5,12 +5,13 @@ type Action = {
   type: string
 }
 
-const reducer = (state: countState = 0, action: Action): number => {
+const reducer = produce((draft: countState = 0, action: Action) => {
   switch (action.type) {
     case 'ADD_COUNT':
-      return state + 1
+      return draft + 1
+    default:
+      return draft
   }
-  return state
-}
+})
 
 export default reducer
