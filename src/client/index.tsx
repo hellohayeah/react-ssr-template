@@ -1,18 +1,22 @@
 import React from 'react'
 import { hydrate } from 'react-dom'
+import { Provider } from 'react-redux'
 import { Router } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { createBrowserHistory } from 'history'
+import store from '../common/store'
 import App from '../common/App'
 
 const history = createBrowserHistory()
 
 hydrate(
-  <Router history={history}>
-    <HelmetProvider>
-      <App />
-    </HelmetProvider>
-  </Router>,
+  <Provider store={store}>
+    <Router history={history}>
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
+    </Router>
+  </Provider>,
   document.getElementById('root')
 )
 
