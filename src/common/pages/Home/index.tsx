@@ -9,8 +9,10 @@ const Home: React.FC = () => {
 
   return (
     <div className={s.home}>
-      <p>{count}</p>
-      <button onClick={() => dispatch(addCount())}>++</button>
+      <div className="container">
+        <p>{count}</p>
+        <button onClick={() => dispatch(addCount())}>++</button>
+      </div>
     </div>
   )
 }
