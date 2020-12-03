@@ -1,17 +1,28 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { useDispatch } from 'react-redux'
 import s from './Home.module.scss'
-import { useSelector, useDispatch } from 'react-redux'
-import { addCount } from '../../store/actions'
+import { setLocale } from '../../store/languages/actions'
+import { Locale } from '../../store/languages/types'
 
 const Home: React.FC = () => {
+  const { t } = useTranslation()
   const dispatch = useDispatch()
-  const count = useSelector(state => state)
+
+  const handleLocaleChange = (e: React.FormEvent<HTMLButtonElement>) => {
+    dispatch(setLocale(e.currentTarget.value as Locale))
+  }
 
   return (
     <div className={s.home}>
+      {t('i18n-example')}
       <div className="container">
-        <p>{count}</p>
-        <button onClick={() => dispatch(addCount())}>++</button>
+        <button value="zh_TW" onClick={handleLocaleChange}>
+          Taiwanese
+        </button>
+        <button value="en_US" onClick={handleLocaleChange}>
+          English
+        </button>
       </div>
     </div>
   )

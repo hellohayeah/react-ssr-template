@@ -9,7 +9,8 @@ const paths: any = {
   clientBuild: resolveApp('dist/client'),
   serverSrc: resolveApp('src/server'),
   serverBuild: resolveApp('dist/server'),
-  publicPath: '/static/'
+  locales: resolveApp('src/common/i18n/locales'),
+  publicPath: '/static/',
 }
 
 export default paths
