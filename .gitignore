@@ -6,11 +6,9 @@
 
 # 模組檔案
 node_modules/
-package-lock.json
 
 # 環境變數
 .env
 
 # yarn error
-yarn.lock
 yarn-error.log

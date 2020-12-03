@@ -17,7 +17,7 @@ const compiler = webpack(clientDevConfig)
 app.use('/static', express.static(paths.clientBuild))
 app.use(
   webpackDevMiddleware(compiler, {
-    publicPath: clientDevConfig.output.publicPath
+    publicPath: clientDevConfig.output.publicPath,
   })
 )
 app.use(webpackHotMiddleware(compiler))
@@ -25,7 +25,7 @@ app.use(webpackHotMiddleware(compiler))
 const manifestPath = path.join(paths.clientBuild, paths.publicPath)
 app.use(
   manifestHelpers({
-    manifestPath: `${manifestPath}/manifest.json`
+    manifestPath: `${manifestPath}/manifest.json`,
   })
 )
 app.use(render())

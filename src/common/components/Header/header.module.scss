@@ -1,5 +1,5 @@
-@import '../../../assets/styles/variable';
-@import '../../../assets/styles/mixins';
+@import '../../assets/styles/variable';
+@import '../../assets/styles/mixins';
 
 .header {
   background-color: #282c34;
@@ -12,7 +12,7 @@
 }
 
 .menu_bar {
-  ul { 
+  ul {
     margin: 0;
     padding: 0;
     padding: 10px 0;
@@ -23,7 +23,7 @@
   }
   a {
     color: white;
-    font-family: "微軟正黑體";
+    font-family: '微軟正黑體';
   }
 }
 
