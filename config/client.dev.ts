@@ -7,22 +7,22 @@ import common from './client.base'
 const clientDevConfig: webpack.Configuration = merge(common, {
   mode: 'development',
   output: {
-    publicPath: 'http://localhost:8080/'
+    publicPath: 'http://localhost:8080/',
   },
   entry: {
-    bundle: ['webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr', paths.clientSrc]
+    bundle: ['webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr', paths.clientSrc],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[id].css'
+      chunkFilename: '[id].css',
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   performance: {
-    hints: false
-  }
+    hints: false,
+  },
 })
 
 export default clientDevConfig

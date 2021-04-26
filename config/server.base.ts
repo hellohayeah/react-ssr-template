@@ -17,21 +17,21 @@ const config: webpack.Configuration = {
     server: [
       require.resolve('core-js/stable'),
       require.resolve('regenerator-runtime/runtime'),
-      path.resolve(paths.serverSrc)
-    ]
+      path.resolve(paths.serverSrc),
+    ],
   },
   output: {
     path: paths.serverBuild,
     publicPath: paths.publicPath,
-    filename: '[name].js'
+    filename: '[name].js',
   },
   resolve: { ...resolvers },
   module: {
-    rules: loaderServer
+    rules: loaderServer,
   },
   externals: nodeExternals({
-    whitelist: /\.(sa|sc|c)ss$/
-  })
+    allowlist: /\.(sa|sc|c)ss$/,
+  }),
 }
 
 export default config

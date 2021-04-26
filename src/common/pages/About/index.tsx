@@ -1,9 +1,9 @@
 import React from 'react'
-import s from './About.module.scss'
+// import s from './About.module.scss'
 
 const About: React.FC = () => {
   return (
-    <div className={s.about}>
+    <div>
       <div className="container">About</div>
     </div>
   )

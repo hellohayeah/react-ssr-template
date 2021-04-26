@@ -12,120 +12,104 @@ const babelLoader = {
           {
             loaderMap: {
               svg: {
-                ReactComponent: '@svgr/webpack?-prettier,-svgo![path]'
-              }
-            }
-          }
-        ]
+                ReactComponent: '@svgr/webpack?-prettier,-svgo![path]',
+              },
+            },
+          },
+        ],
       ],
-      cacheDirectory: true
-    }
-  }
-}
-
-const cssModueleLoaderClient = {
-  test: /\.module\.scss$/,
-  use: [
-    'css-hot-loader',
-    MiniCssExtractPlugin.loader,
-    {
-      loader: 'css-loader',
-      options: {
-        importLoaders: 1,
-        modules: {
-          localIdentName: '[local]_[hash:8]'
-        }
-      }
+      cacheDirectory: true,
     },
-    'resolve-url-loader',
-    'postcss-loader',
-    'sass-loader'
-  ]
+  },
 }
 
-const cssLoaderClient = {
-  test: /\.(sa|sc|c)ss$/,
-  exclude: /\.module\.scss$/,
-  use: [
-    'css-hot-loader',
-    MiniCssExtractPlugin.loader,
-    'css-loader',
-    'resolve-url-loader',
-    'postcss-loader',
-    'sass-loader'
-  ]
-}
+// const cssModueleLoaderClient = {
+//   test: /\.module\.scss$/,
+//   use: [
+//     'css-hot-loader',
+//     MiniCssExtractPlugin.loader,
+//     {
+//       loader: 'css-loader',
+//       options: {
+//         importLoaders: 1,
+//         modules: {
+//           localIdentName: '[local]_[contenthash:8]',
+//         },
+//       },
+//     },
+//     'resolve-url-loader',
+//     'postcss-loader',
+//     'sass-loader',
+//   ],
+// }
 
-const cssModueleLoaderServer = {
-  test: /\.module\.scss$/,
-  use: [
-    MiniCssExtractPlugin.loader,
-    {
-      loader: 'css-loader',
-      options: {
-        importLoaders: 1,
-        modules: {
-          localIdentName: '[local]_[hash:8]'
-        }
-      }
-    },
-    'sass-loader'
-  ]
-}
+// const cssLoaderClient = {
+//   test: /\.(sa|sc|c)ss$/,
+//   exclude: /\.module\.scss$/,
+//   use: [
+//     'css-hot-loader',
+//     MiniCssExtractPlugin.loader,
+//     'css-loader',
+//     'resolve-url-loader',
+//     'postcss-loader',
+//     'sass-loader',
+//   ],
+// }
 
-const cssLoaderServer = {
-  test: /\.(sa|sc|c)ss$/,
-  exclude: /\.module\.scss$/,
-  use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-}
+// const cssModueleLoaderServer = {
+//   test: /\.module\.scss$/,
+//   use: [
+//     MiniCssExtractPlugin.loader,
+//     {
+//       loader: 'css-loader',
+//       options: {
+//         importLoaders: 1,
+//         modules: {
+//           localIdentName: '[local]_[contenthash:8]',
+//         },
+//       },
+//     },
+//     'sass-loader',
+//   ],
+// }
+
+// const cssLoaderServer = {
+//   test: /\.(sa|sc|c)ss$/,
+//   exclude: /\.module\.scss$/,
+//   use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+// }
 
 const urlLoaderClient = {
   test: /\.(png|jpe?g|gif|svg)$/,
-  use: [
-    {
-      loader: require.resolve('url-loader'),
-      options: {
-        limit: 2048,
-        name: 'assets/[name].[hash:8].[ext]'
-      }
-    }
-  ]
+  type: 'asset/resource',
+  generator: {
+    filename: 'assets/[name].[contenthash:8].[ext]',
+  },
 }
 
 const urlLoaderServer = {
   test: /\.(png|jpe?g|gif|svg)$/,
-  loader: require.resolve('url-loader'),
-  options: {
-    limit: 2048,
-    name: 'assets/[name].[hash:8].[ext]',
-    emitFile: false
-  }
+  type: 'asset/resource',
+  generator: {
+    filename: 'assets/[name].[contenthash:8].[ext]',
+  },
 }
 
 const fileLoaderClient = {
   exclude: [/\.(js|jsx|ts|tsx|css|scss|mjs|html|ejs|json)$/],
-  use: [
-    {
-      loader: require.resolve('file-loader'),
-      options: {
-        name: 'assets/[name].[hash:8].[ext]'
-      }
-    }
-  ]
+  type: 'asset/resource',
+  generator: {
+    filename: 'assets/[name].[contenthash:8].[ext]',
+  },
 }
 
 const fileLoaderServer = {
   exclude: [/\.(js|tsx|ts|tsx|css|scss|mjs|html|ejs|json)$/],
-  use: [
-    {
-      loader: require.resolve('file-loader'),
-      options: {
-        name: 'assets/[name].[hash:8].[ext]',
-        emitFile: false
-      }
-    }
-  ]
+  type: 'asset/resource',
+  generator: {
+    filename: 'assets/[name].[contenthash:8].[ext]',
+  },
 }
 
-export const clientLoaders = [babelLoader, cssModueleLoaderClient, cssLoaderClient, urlLoaderClient, fileLoaderClient]
-export const loaderServer = [babelLoader, cssModueleLoaderServer, cssLoaderServer, urlLoaderServer, fileLoaderServer]
+export const clientLoaders = [babelLoader, urlLoaderClient, fileLoaderClient]
+export const loaderServer = [babelLoader, urlLoaderServer, fileLoaderServer]

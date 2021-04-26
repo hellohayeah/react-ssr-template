@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
-import s from './Home.module.scss'
+// import s from './Home.module.scss'
 import { setLocale } from '../../store/languages/actions'
 import { Locale } from '../../store/languages/types'
 
@@ -14,7 +14,7 @@ const Home: React.FC = () => {
   }
 
   return (
-    <div className={s.home}>
+    <div>
       {t('i18n-example')}
       <div className="container">
         <button value="zh_TW" onClick={handleLocaleChange}>
