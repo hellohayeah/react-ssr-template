@@ -1,7 +1,7 @@
 import React from 'react'
 import { hydrate } from 'react-dom'
 import { Provider } from 'react-redux'
-import { Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import IntlProvider from '../common/i18n/IntlProvider'
 import { HelmetProvider } from 'react-helmet-async'
 import { createBrowserHistory } from 'history'
@@ -12,13 +12,13 @@ const history = createBrowserHistory()
 
 hydrate(
   <Provider store={store}>
-    <Router history={history}>
+    <BrowserRouter>
       <IntlProvider>
         <HelmetProvider>
           <App />
         </HelmetProvider>
       </IntlProvider>
-    </Router>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 )

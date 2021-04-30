@@ -4,23 +4,24 @@ import { Provider } from 'react-redux'
 import IntlProvider from '../common/i18n/IntlProvider'
 import { HelmetProvider } from 'react-helmet-async'
 import { renderToString } from 'react-dom/server'
-import { StaticRouter as Router } from 'react-router-dom'
+import { StaticRouter } from 'react-router-dom'
 import Template from './Template'
 import store from '../common/store'
 import App from '../common/App'
 
 const helmetContext = {}
+const context = {}
 
 const render = () => (req: express.Request, res: express.Response) => {
   const content = renderToString(
     <Provider store={store}>
-      <Router location={req.url}>
+      <StaticRouter location={req.url} context={context}>
         <IntlProvider>
           <HelmetProvider context={helmetContext}>
             <App />
           </HelmetProvider>
         </IntlProvider>
-      </Router>
+      </StaticRouter>
     </Provider>
   )
 
