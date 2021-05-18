@@ -1,1 +1,1 @@
-export default { extensions: ['.ts', '.tsx', '.js', '.jsx'] }
+export default { extensions: ['.ts', '.tsx', '.js', '.jsx'], fallback: { 'url': require.resolve('url/') } }
