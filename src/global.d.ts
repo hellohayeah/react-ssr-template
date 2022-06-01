@@ -12,9 +12,6 @@ declare module '*.svg' {
   export default src
 }
 
-declare module '*.module.scss' {
-  const scss: { [key: string]: string }
-  export default scss
-}
+
 
 declare module 'express-manifest-helpers'

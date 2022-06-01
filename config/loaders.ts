@@ -1,5 +1,3 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-
 const babelLoader = {
   test: /\.(js|jsx|ts|tsx)$/,
   use: {
@@ -21,62 +19,6 @@ const babelLoader = {
       cacheDirectory: true,
     },
   },
-}
-
-const cssModueleLoaderClient = {
-  test: /\.module\.scss$/,
-  use: [
-    'css-hot-loader',
-    MiniCssExtractPlugin.loader,
-    {
-      loader: 'css-loader',
-      options: {
-        importLoaders: 1,
-        modules: {
-          localIdentName: '[local]_[contenthash:8]',
-        },
-      },
-    },
-    'resolve-url-loader',
-    'postcss-loader',
-    'sass-loader',
-  ],
-}
-
-const cssLoaderClient = {
-  test: /\.(sa|sc|c)ss$/,
-  exclude: /\.module\.scss$/,
-  use: [
-    'css-hot-loader',
-    MiniCssExtractPlugin.loader,
-    'css-loader',
-    'resolve-url-loader',
-    'postcss-loader',
-    'sass-loader',
-  ],
-}
-
-const cssModueleLoaderServer = {
-  test: /\.module\.scss$/,
-  use: [
-    MiniCssExtractPlugin.loader,
-    {
-      loader: 'css-loader',
-      options: {
-        importLoaders: 1,
-        modules: {
-          localIdentName: '[local]_[contenthash:8]',
-        },
-      },
-    },
-    'sass-loader',
-  ],
-}
-
-const cssLoaderServer = {
-  test: /\.(sa|sc|c)ss$/,
-  exclude: /\.module\.scss$/,
-  use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
 }
 
 const urlLoaderClient = {
@@ -111,5 +53,5 @@ const fileLoaderServer = {
   },
 }
 
-export const clientLoaders = [babelLoader, cssModueleLoaderClient, cssLoaderClient, urlLoaderClient, fileLoaderClient]
-export const loaderServer = [babelLoader, cssModueleLoaderServer, cssLoaderServer, urlLoaderServer, fileLoaderServer]
+export const clientLoaders = [babelLoader, urlLoaderClient, fileLoaderClient]
+export const loaderServer = [babelLoader, urlLoaderServer, fileLoaderServer]

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import s from './header.module.scss'
 // import ReactLogo from '../../assets/images/logo.svg'
 
 const Header: React.FC = () => {

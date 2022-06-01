@@ -1,6 +1,5 @@
 import webpack from 'webpack'
 import path from 'path'
-import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin'
 import paths from '../utils/paths'
 import { clientLoaders } from './loaders'
@@ -17,10 +16,7 @@ const config: webpack.Configuration = {
     filename: '[name].js',
     chunkFilename: '[name].[chunkhash:8].chunk.js',
   },
-  plugins: [
-    new CssMinimizerPlugin() as { apply(...args: any[]): void },
-    new WebpackManifestPlugin({ fileName: 'manifest.json' }) as { apply(...args: any[]): void },
-  ],
+  plugins: [new WebpackManifestPlugin({ fileName: 'manifest.json' }) as { apply(...args: any[]): void }],
   resolve: { ...resolvers },
   module: {
     rules: clientLoaders,
