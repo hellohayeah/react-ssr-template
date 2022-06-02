@@ -13,7 +13,7 @@ const Home: React.FC = () => {
   }
 
   return (
-    <div className={s.home}>
+    <div className="home">
       {t('i18n-example')}
       <div className="container">
         <button value="zh_TW" onClick={handleLocaleChange}>

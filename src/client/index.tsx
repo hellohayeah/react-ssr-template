@@ -1,5 +1,5 @@
 import React from 'react'
-import { hydrate } from 'react-dom'
+import { hydrateRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import IntlProvider from '../common/i18n/IntlProvider'
@@ -10,7 +10,8 @@ import App from '../common/App'
 
 const history = createBrowserHistory()
 
-hydrate(
+hydrateRoot(
+  document.getElementById('root'),
   <Provider store={store}>
     <BrowserRouter>
       <IntlProvider>
@@ -19,8 +20,7 @@ hydrate(
         </HelmetProvider>
       </IntlProvider>
     </BrowserRouter>
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 )
 
 if (process.env.NODE_ENV === 'development') {

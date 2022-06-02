@@ -7,10 +7,10 @@ const Header: React.FC = () => {
   const { t } = useTranslation()
 
   return (
-    <header className={s.header}>
+    <header className="header">
       {/* <ReactLogo /> */}
       <h2>{t('features')}</h2>
-      <nav className={s.menu_bar}>
+      <nav className="menu_bar">
         <ul>
           <li>
             <Link to="/">HOME</Link>
