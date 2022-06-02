@@ -29,7 +29,6 @@ const render = () => (req: express.Request, res: express.Response) => {
       renderToString(
         <Template
           helmetContext={helmetContext}
-          css={[res.locals.assetPath('bundle.css'), res.locals.assetPath('vendor.css')]}
           scripts={[res.locals.assetPath('bundle.js'), res.locals.assetPath('vendor.js')]}
         >
           {content}

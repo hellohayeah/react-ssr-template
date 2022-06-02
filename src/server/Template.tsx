@@ -2,12 +2,11 @@ import React from 'react'
 
 type Props = {
   children: any
-  css: string[]
   helmetContext: any
   scripts: string[]
 }
 
-const Template = ({ children, css = [], scripts = [], helmetContext: { helmet } }: Props) => (
+const Template = ({ children, scripts = [], helmetContext: { helmet } }: Props) => (
   <html lang="en">
     <head>
       <meta charSet="UTF-8" />
@@ -19,9 +18,6 @@ const Template = ({ children, css = [], scripts = [], helmetContext: { helmet } 
       {helmet.meta.toComponent()}
       {helmet.link.toComponent()}
       {helmet.script.toComponent()}
-      {css.filter(Boolean).map(href => (
-        <link key={href} rel="stylesheet" href={href} />
-      ))}
     </head>
     <body>
       <div id="root" dangerouslySetInnerHTML={{ __html: children }} />
