@@ -9,14 +9,13 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       {/* <ReactLogo /> */}
-      <h2>{t('features')}</h2>
       <nav className="menu_bar">
         <ul>
           <li>
-            <Link to="/">HOME</Link>
+            <Link to="/">{t('nav.home')}</Link>
           </li>
           <li>
-            <Link to="/about">ABOUT</Link>
+            <Link to="/about">{t('nav.about')}</Link>
           </li>
         </ul>
       </nav>

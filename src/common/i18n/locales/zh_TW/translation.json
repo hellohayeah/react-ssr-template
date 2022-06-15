@@ -1,11 +1,7 @@
 {
-  "features": "Features",
-  "i18n-example": "i18n 範例",
-  "i18n-support": "i18n 支援 (via React i18Next)",
-  "router-headline": "Router 範例",
+  "title": "React Webpack SSR 實作",
   "nav": {
     "home": "首頁",
-    "page-1": "範例頁面 1",
-    "page-2": "範例頁面 2"
+    "about": "關於我"
   }
 }
